@@ -16,6 +16,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
 
   return (
     <Card style={{ width: '18rem', margin: '10px' }}>
+      <Card.Img variant="top" src={authorObj.image} alt={authorObj.last_name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{authorObj.first_name} {authorObj.last_name} {authorObj.favorite ? ' 🤍' : ''}</Card.Title>
         <p className="card-text bold">Email: {authorObj.email}</p>
@@ -37,6 +38,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
 
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
+    image: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     email: PropTypes.string,
